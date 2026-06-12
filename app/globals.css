@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --edwar-blue: #0080FF;
+    --edwar-dark: #1A1A1A;
+    --edwar-gray: #2D2D2D;
+    --edwar-silver: #C0C0C0;
+    --edwar-light: #F5F5F5;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-edwar-dark text-edwar-light antialiased;
+  }
+
+  ::selection {
+    @apply bg-edwar-blue/30 text-white;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    @apply bg-gradient-to-r from-edwar-blue to-blue-400;
+  }
+
+  .gradient-dark {
+    @apply bg-gradient-to-br from-edwar-dark via-edwar-gray to-edwar-dark;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 50%, #0080FF15 100%);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-edwar-blue to-blue-300 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-edwar-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-edwar-gray rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-edwar-silver/50;
+}
