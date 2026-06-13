@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Award, BadgeCheck, Clock } from 'lucide-react'
+import { Shield, Award, BadgeCheck, Calendar } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { WHY_CHOOSE_US } from '@/lib/constants'
 
 const iconMap: Record<string, React.ReactNode> = {
-  shield: <Shield className="w-8 h-8" />,
-  award: <Award className="w-8 h-8" />,
-  certificate: <BadgeCheck className="w-8 h-8" />,
-  clock: <Clock className="w-8 h-8" />,
+  shield: <Shield className="w-16 h-16" />,
+  award: <Award className="w-16 h-16" />,
+  certificate: <BadgeCheck className="w-16 h-16" />,
+  calendar: <Calendar className="w-16 h-16" />,
 }
 
 export function WhyChooseUs() {
@@ -26,7 +26,7 @@ export function WhyChooseUs() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">
             ¿Por qué elegirnos?
           </h2>
-          <p className="text-edwar-silver/60 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto">
             Somos tu mejor opción para la reparación de equipos Apple en Lurín
           </p>
         </motion.div>
@@ -39,15 +39,19 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
             >
-              <Card className="h-full text-center">
-                <div className="text-edwar-blue mb-4 flex justify-center">
-                  {iconMap[item.icon]}
+              <Card className="h-full text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-edwar-blue/30 transition-all duration-300">
+                <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-edwar-blue/10 to-transparent rounded-t-2xl pointer-events-none" />
+                <div className="relative z-10">
+                  <div className="text-edwar-blue mb-4 flex justify-center">
+                    {iconMap[item.icon]}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-sm text-edwar-silver/60 leading-relaxed">
-                  {item.description}
-                </p>
               </Card>
             </motion.div>
           ))}

@@ -12,9 +12,10 @@ export const SITE_CONFIG = {
     country: 'Perú',
   },
   coordinates: {
-    lat: -12.3286,
-    lng: -76.8722,
+    lat: -12.2749935,
+    lng: -76.873028,
   },
+  address_long: 'P4GG+2Q5, Av. San Pedro, Lima 15823',
   hours: {
     days: 'Lunes a Domingo',
     hours: '8:00 am a 9:00 pm',
@@ -87,8 +88,8 @@ export const WHY_CHOOSE_US = [
   },
   {
     title: 'Atención Todos los Días',
-    description: 'Estamos disponibles de lunes a domingo de 8:00 am a 9:00 pm para atenderte.',
-    icon: 'clock',
+    description: 'Lunes a Domingo de 8am a 9pm sin interrupciones.',
+    icon: 'calendar',
   },
 ]
 

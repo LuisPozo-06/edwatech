@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ContactInfo } from '@/components/sections/ContactInfo'
+import { LocationGallery } from '@/components/sections/LocationGallery'
 import { LocationMap } from '@/components/sections/LocationMap'
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export default function UbicacionPage() {
   return (
     <>
       <ContactInfo />
+      <LocationGallery />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28">
         <LocationMap />
       </div>

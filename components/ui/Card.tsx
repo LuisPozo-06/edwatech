@@ -15,9 +15,9 @@ export function Card({ children, className, hover = true, highlighted = false, o
     <div
       onClick={onClick}
       className={cn(
-        'rounded-2xl bg-edwar-gray/50 border border-white/5 p-6 transition-all duration-300',
-        hover && 'hover:shadow-xl hover:-translate-y-1 hover:border-edwar-blue/30',
-        highlighted && 'border-b-2 border-b-edwar-blue',
+        'relative rounded-2xl bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 transition-all duration-300 overflow-hidden',
+        hover && 'hover:border-edwar-blue/30 hover:shadow-xl hover:-translate-y-1',
+        highlighted && 'border-l-4 border-l-edwar-blue',
         onClick && 'cursor-pointer',
         className
       )}
